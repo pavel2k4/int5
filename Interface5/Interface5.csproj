@@ -9,14 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="settings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="settings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="xunit" Version="2.9.2" />
   </ItemGroup>
 

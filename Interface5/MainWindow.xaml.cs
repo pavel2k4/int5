@@ -16,7 +16,8 @@ namespace Interface5
         public MainWindow()
         {
             InitializeComponent();
-            _settings = new Settings();
+            _settings = Settings.Load();
+            
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)

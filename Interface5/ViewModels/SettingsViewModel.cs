@@ -21,18 +21,11 @@ namespace Interface5.ViewModels
             get => _settings.Size;
             set
             {
-                if (_settings.Size != value || _settings.Size < 10 || _settings.Size > 20)
+                if (_settings.Size != value)
                 {
                     _settings.Size = value;
                     OnPropertyChanged();
                 }
-                else
-                {
-                    MessageBox.Show("Error");
-                    _settings.Size = 10;
-                    OnPropertyChanged();
-                }
-                
             }
         }
 

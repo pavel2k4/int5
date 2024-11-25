@@ -23,19 +23,22 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            
+
             <!--Размер поля-->
             <Label Content="Размер поля" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox Grid.Column="1" Margin="5, 30"
                      FontSize="20px" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <!--Путь статистики-->
             <Label Grid.Row="1" Content="Путь статистики" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="tbPathStats" Grid.Row="1" Grid.Column="1" Margin="5, 30"
-                    FontSize="20px" Text="{Binding PathStats}" IsReadOnly="True"/>
+                     FontSize="20px" Text="{Binding PathStats}" IsReadOnly="True"/>
             <Button x:Name="btnPathStats" Grid.Row="1" Grid.Column="2" Margin="5, 30" FontSize="10" Content="Выбрать" Click="btnPathStats_Click"/>
         </Grid>
-        <Button x:Name="btnExit" Grid.Row="1" Height="30" Margin="10" Content="Выйти" VerticalAlignment="Bottom" Click="btnExit_Click"/>
 
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="btnSave" Width="170" Height="30" Margin="5" Content="Сохранить" Click="btnSave_Click"/>
+            <Button x:Name="btnExit" Width="170" Height="30" Margin="5" Content="Выйти" Click="btnExit_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -17,8 +17,7 @@ namespace Interface5.Views
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
-            _settings.Save(); 
+        { 
             Close();
         }
 
@@ -33,6 +32,23 @@ namespace Interface5.Views
             {
                 ((SettingsViewModel)DataContext).PathStats = fileDialog.FileName;
             }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            var viewModel = (SettingsViewModel)DataContext;
+
+            if (viewModel.Size < 10 || viewModel.Size > 20)
+            {
+                MessageBox.Show("Размер поля должен быть от 10 до 20.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            _settings.Size = viewModel.Size;
+            _settings.PathStats = viewModel.PathStats;
+            _settings.Save();
+
+            MessageBox.Show("Настройки успешно сохранены.", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
