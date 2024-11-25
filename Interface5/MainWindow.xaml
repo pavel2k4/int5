@@ -1,0 +1,24 @@
+﻿<Window x:Class="Interface5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface5"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Height="600" 
+        Width="800"
+        >
+    <Grid x:Name="MainMenu">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnPlay" Height="50px" Width="300px" Content="Играть" FontSize="20px" Click="btnPlay_Click"/>
+        <Button x:Name="btnSettings" Grid.Row="1" Height="50px" Width="300px" Content="Настройки" FontSize="20px" Click="btnSettings_Click"/>
+        <Button x:Name="btnStats" Grid.Row="2" Height="50px" Width="300px" Content="Статистика" FontSize="20px" Click="btnStats_Click"/>
+
+    </Grid>
+</Window>
