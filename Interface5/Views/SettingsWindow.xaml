@@ -26,13 +26,13 @@
 
             <!--Размер поля-->
             <Label Content="Размер поля" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Margin="5, 30"
-                     FontSize="20px" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tbSize" Grid.Column="1" Margin="5, 30"
+                     FontSize="20px" Text=""/>
 
             <!--Путь статистики-->
             <Label Grid.Row="1" Content="Путь статистики" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="tbPathStats" Grid.Row="1" Grid.Column="1" Margin="5, 30"
-                     FontSize="20px" Text="{Binding PathStats}" IsReadOnly="True"/>
+                     FontSize="20px" Text="" IsReadOnly="True"/>
             <Button x:Name="btnPathStats" Grid.Row="1" Grid.Column="2" Margin="5, 30" FontSize="10" Content="Выбрать" Click="btnPathStats_Click"/>
         </Grid>
 

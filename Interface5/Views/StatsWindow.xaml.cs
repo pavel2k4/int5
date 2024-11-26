@@ -10,17 +10,17 @@ namespace Interface5.Views
     /// </summary>
     public partial class StatsWindow : Window
     {
-        private readonly Settings _settings;
+        private readonly string _statsPath;
 
         public int NumberOfGames { get; set; }
         public int MaxSteps { get; set; }
         public int MinSteps { get; set; }
 
 
-        public StatsWindow(Settings settings)
+        public StatsWindow(string statsPath)
         {
             InitializeComponent();
-            _settings = settings;
+            _statsPath = statsPath;
             DataContext = this;
             DefStats();
         }
@@ -34,7 +34,7 @@ namespace Interface5.Views
 
         private void DefStats()
         {
-            string json = File.ReadAllText(_settings.PathStats);
+            string json = File.ReadAllText(_statsPath);
             if (json == null) return;
             var stats = JsonSerializer.Deserialize<Stats>(json);
             NumberOfGames = stats.NumberOfGames;

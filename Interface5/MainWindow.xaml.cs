@@ -28,7 +28,7 @@ namespace Interface5
 
         private void btnStats_Click(object sender, RoutedEventArgs e)
         {
-            _statsWindow = new StatsWindow(_settings);
+            _statsWindow = new StatsWindow(_settings.PathStats);
             _statsWindow.ShowDialog();
         }
 

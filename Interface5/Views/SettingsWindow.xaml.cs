@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using Interface5.Models;
-using Interface5.ViewModels;
 using Microsoft.Win32;
 
 namespace Interface5.Views
@@ -13,11 +12,13 @@ namespace Interface5.Views
         {
             InitializeComponent();
             _settings = settings;
-            DataContext = new SettingsViewModel(_settings);
+
+            tbSize.Text = _settings.Size.ToString();
+            tbPathStats.Text = _settings.PathStats;
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             Close();
         }
 
@@ -30,22 +31,31 @@ namespace Interface5.Views
 
             if (fileDialog.ShowDialog() == true)
             {
-                ((SettingsViewModel)DataContext).PathStats = fileDialog.FileName;
+                _settings.PathStats = fileDialog.FileName;
+                tbPathStats.Text = _settings.PathStats; 
             }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = (SettingsViewModel)DataContext;
-
-            if (viewModel.Size < 10 || viewModel.Size > 20)
+            if (int.TryParse(tbSize.Text, out int size))
             {
-                MessageBox.Show("Размер поля должен быть от 10 до 20.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (size < 10 || size > 20)
+                {
+                    MessageBox.Show("Размер поля должен быть от 10 до 20.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbSize.Text = "10";
+                    return;
+                }
+
+                _settings.Size = size;
+            }
+            else
+            {
+                MessageBox.Show("Введите корректное числовое значение для размера поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbSize.Text = "10";
                 return;
             }
 
-            _settings.Size = viewModel.Size;
-            _settings.PathStats = viewModel.PathStats;
             _settings.Save();
 
             MessageBox.Show("Настройки успешно сохранены.", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Information);

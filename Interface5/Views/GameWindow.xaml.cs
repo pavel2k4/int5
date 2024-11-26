@@ -19,14 +19,12 @@ namespace Interface5.Views
 
         private void InitializeGameGrid(int size)
         {
-            // Добавляем строки
             for (int i = 0; i < size; i++)
             {
                 GameGrid.RowDefinitions.Add(new RowDefinition());
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
             }
 
-            // Добавляем кнопки
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
@@ -34,12 +32,11 @@ namespace Interface5.Views
                     var button = new Button
                     {
                         Tag = (i, j),
-                        Margin = new Thickness(1) // Отступы для визуального разделения
+                        Margin = new Thickness(1)
                     };
 
                     button.Click += OnCellClick;
 
-                    // Устанавливаем позицию кнопки в сетке
                     Grid.SetRow(button, i);
                     Grid.SetColumn(button, j);
 

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow"
         WindowStartupLocation="CenterScreen"
-        Height="600" 
-        Width="800"
+        Height="300" 
+        Width="300"
         >
     <Grid x:Name="MainMenu">
         <Grid.RowDefinitions>
@@ -16,9 +16,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnPlay" Height="50px" Width="300px" Content="Играть" FontSize="20px" Click="btnPlay_Click"/>
-        <Button x:Name="btnSettings" Grid.Row="1" Height="50px" Width="300px" Content="Настройки" FontSize="20px" Click="btnSettings_Click"/>
-        <Button x:Name="btnStats" Grid.Row="2" Height="50px" Width="300px" Content="Статистика" FontSize="20px" Click="btnStats_Click"/>
+        <Button x:Name="btnPlay" Height="65px" Width="300px" Content="Играть" FontSize="20px" Click="btnPlay_Click" Margin="10"/>
+        <Button x:Name="btnSettings" Grid.Row="1" Height="65px" Width="300px" Content="Настройки" FontSize="20px" Click="btnSettings_Click" Margin="10"/>
+        <Button x:Name="btnStats" Grid.Row="2" Height="65px" Width="300px" Content="Статистика" FontSize="20px" Click="btnStats_Click" Margin="10"/>
 
     </Grid>
 </Window>

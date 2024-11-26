@@ -17,7 +17,7 @@
 
             _size = size;
             _board = new char[_size, _size];
-            _currentPlayer = 'X'; // Первый игрок
+            _currentPlayer = 'X'; 
         }
 
         public bool MakeMove(int x, int y)
@@ -25,11 +25,11 @@
             if (x < 0 || x >= _size || y < 0 || y >= _size)
                 throw new ArgumentOutOfRangeException("Координаты выходят за пределы поля.");
 
-            if (_board[x, y] != '\0') // Проверка занятости клетки
+            if (_board[x, y] != '\0') 
                 return false;
 
             _board[x, y] = _currentPlayer;
-            _currentPlayer = _currentPlayer == 'X' ? 'O' : 'X'; // Смена хода
+            _currentPlayer = _currentPlayer == 'X' ? 'O' : 'X';
             return true;
         }
 
@@ -45,7 +45,7 @@
                 }
             }
 
-            return '\0'; // Победителя нет
+            return '\0';
         }
 
         private bool CheckLine(int startX, int startY, int dx, int dy)
