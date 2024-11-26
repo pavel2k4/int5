@@ -10,6 +10,7 @@
         public char CurrentPlayer => _currentPlayer;
         public int Size => _size;
 
+
         public GameModel(int size)
         {
             if (size < 10 || size > 20)
@@ -66,6 +67,7 @@
 
             return count == 5;
         }
+
     }
 
 }

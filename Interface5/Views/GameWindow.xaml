@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interface5.Views"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="GameWindow" Height="600" Width="800">
-    <Grid x:Name="GameGrid">
-        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="X" VerticalAlignment="Center" FontSize="30px" Margin="0,0,175,0"/>
+        <Label Panel.ZIndex="100" Content="O" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30px" Margin="700,0,0,0" />
+        <TextBox x:Name="tbTimer1" FontSize="40px" Text="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="36,0,0,0"/>
+        <TextBox x:Name="tbTimer2" FontSize="40px" Text="60" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Grid Grid.Row="1" x:Name="GameGrid">
+
+        </Grid>
     </Grid>
+
 </Window>
