@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <Label Content="X" VerticalAlignment="Center" FontSize="30px" Margin="0,0,175,0"/>
         <Label Panel.ZIndex="100" Content="O" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30px" Margin="700,0,0,0" />
-        <TextBox x:Name="tbTimer1" FontSize="40px" Text="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="36,0,0,0"/>
-        <TextBox x:Name="tbTimer2" FontSize="40px" Text="60" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbTimer1" FontSize="40px" Text="{Binding TimeLeft, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="36,0,0,0"/>
+        <TextBox x:Name="tbTimer2" FontSize="40px" Text="{Binding TimeLeft2, Mode=OneWay}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <Grid Grid.Row="1" x:Name="GameGrid">
 
         </Grid>
